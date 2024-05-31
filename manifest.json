@@ -6,7 +6,7 @@
   "icons": {
     "128": "icons/icon.png"
   },
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "clipboardWrite"],
   "background": {
     "service_worker": "background.js"
   },
@@ -17,5 +17,10 @@
     "default_popup": "index.html",
     "default_title": "Open Popup"
   },
-  "commands": {}
+  "host_permissions": [
+    "https://runtime.sagemaker.eu-north-1.amazonaws.com/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
 }
